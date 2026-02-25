@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Итальянский как третий иностранный</title>
+        <script src="js/third_lang_book.js"></script>
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%; 
+                width: 100%;
+
+            } 
+            
+            body {
+            user-select: none;
+            background-image: url(Rome.jpg) ;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex; /* Делаем body flex-контейнером для центрирования дочернего блока */
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center;     /* Центрируем по вертикали */
+                
+            }
+        
+            .container {
+                text-align: center;
+                                
+            }
+
+            .bottomRow {
+                display: flex;          /* Располагаем две кнопки в ряд */
+            justify-content: center; /* Центрируем их по горизонтали */
+
+            }
+
+
+            .buttons {
+                border: solid 2px rgb(43,121,157);
+                background-color: rgb(210,232,242);
+                color: rgb(27,75,99);
+                padding: 15px 30px;
+                text-align: center;
+                border-radius: 15px;
+                font-size: 20pt;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-style: italic;
+                margin: 50px;
+                cursor: pointer;
+
+            }
+        
+            footer {
+        position: fixed; /* Фиксируем относительно окна браузера */
+        bottom: 0; /* Прижимаем к низу */
+        left: 0; /* От левого края */
+        width: 100%; /* На всю ширину */
+        text-align: right; 
+        color: white;
+        padding: 1px 0;
+        background-color: rgba(0,0,0,0.3);
+        margin: 0;
+        font-size: 14pt;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        
+        
+        
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="topRow">
+            <input type="button" value="Пособие" class="buttons">
+            <input type="button" value="Аудио" class="buttons">
+            </div>
+
+            <div class="bottomRow">
+            
+            <input type="button" value="Дополнительные упражнения" class="buttons">
+        </div>
+
+        </div>
+        
+        
+        <footer><p>(c) 2026 Струкова А.А. Практический курс третьего иностранного языка</p> </footer>
+
+
+
+
+    </body>
