@@ -43,10 +43,32 @@
             }
 
 
-            a {
+            table {
+                background-color: rgb(210,232,242);
+                color: rgb(27,75,99);
+                padding: 15px 30px;
+                text-align: center;
+                border-radius: 15px;
+                flex-shrink: 0; /* Запрещаем таблице сжиматься */
+            }
+            
+            th {
+                text-align: center;
+            }
+            tr, td {
+                color: rgb(27,75,99);
+                padding: 15px 30px;
+                text-align: center;
+            }
+            .navig-links {
+                position: fixed;
+                bottom: 50px;
+                text-align: center;
                 color: rgb(210,232,242);
                 margin: 30px;
-                text-align: center;
+                text-decoration: none;
+                
+
             }
 
             footer {
@@ -76,16 +98,34 @@
 
             <div>
                 <table>
-                <tr><td>Упражнение 1</td>
-                <td><audio src="Упражнение1.mp3" controls></audio></td></tr>
+                <th>Правила чтения</th>
+                    <tr><td>Упражнение 1</td>
+                <td><audio src="Упражнение1.mp3" controls></audio></td>
+                <td>Упражнение 2</td>
+                <td><audio src="Упражнение2.mp3" controls></audio></td>
+            </tr>
+
+                            
+            <tr><td>Упражнение 3</td>
+                <td><audio src="Упражнение3.mp3" controls></audio></td>
+                <td>Упражнение 4</td>
+                <td><audio src="Упражнение4.mp3" controls></audio></td>
+            </tr>
+
+            <tr> <td>Упражнение 5a</td>
+                <td><audio src="Упражнение5а.mp3" controls></audio></td>
+                <td>Упражнение 5b</td>
+                <td><audio src="Упражнение5b с паузами.mp3" controls></audio></td>
+            </tr>
             </table>
             </div>
 
 
         </div>
 
-        <p><a href="#top">Вернуться к началу</a></p>
-        <p><a href="index.html">Вернуться на главную страницу</a></p>
+        <div class="navig-links"> <a href="#top">Вернуться к началу</a>
+        <a href="index.html">Вернуться на главную страницу</a></div>
+        
         
         
         <footer><p>(c) 2026 Струкова А.А. Практический курс третьего иностранного языка</p> </footer>
