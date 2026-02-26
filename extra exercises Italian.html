@@ -43,18 +43,15 @@
             }
 
 
-            .buttons {
-                border: solid 2px rgb(43,121,157);
-                background-color: rgb(210,232,242);
-                color: rgb(27,75,99);
-                padding: 15px 30px;
-                text-align: center;
-                border-radius: 15px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-size: 20pt;
-                font-style: italic;
-                margin: 50px;
-                cursor: pointer;
+            .navig-links {
+                position: fixed;
+                bottom: 50px;
+                text-align: right;
+                margin: 0;
+                text-decoration: none;
+                padding: 10px 0;
+                width: auto; /* Ширина по содержимому */
+                white-space: nowrap; /* Запрещаем перенос строк между ссылками */
 
             }
         
@@ -63,7 +60,7 @@
         bottom: 0; /* Прижимаем к низу */
         left: 0; /* От левого края */
         width: 100%; /* На всю ширину */
-        text-align: right; 
+        text-align: center; 
         color: white;
         padding: 1px 0;
         background-color: rgba(0,0,0,0.3);
@@ -89,8 +86,12 @@
 
         
         
+        <div class="navig-links"> 
+        <a href="index.html">Вернуться на главную страницу</a></div>
         
         <footer><p>(c) 2026 Струкова А.А. Практический курс третьего иностранного языка</p> </footer>
+        
+        
 
 
 

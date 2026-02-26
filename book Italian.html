@@ -43,21 +43,31 @@
             }
 
 
-            .buttons {
-                border: solid 2px rgb(43,121,157);
-                background-color: rgb(210,232,242);
-                color: rgb(27,75,99);
-                padding: 15px 30px;
+            .navig-links {
+                position: fixed;
+                bottom: 50px;
+                
                 text-align: center;
-                border-radius: 15px;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-size: 20pt;
-                font-style: italic;
-                margin: 50px;
-                cursor: pointer;
+                margin: 0;
+                text-decoration: none;
+                padding: 10px 0;
+                width: auto; /* Ширина по содержимому */
+                white-space: nowrap; /* Запрещаем перенос строк между ссылками */
 
             }
         
+            .panel {
+                background-color: rgb(210,232,242);
+                color: rgb(27,75,99);
+                padding: 15px 30px;
+                text-align: left;
+                border-radius: 15px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 16pt;
+                font-style: italic;
+                margin: 50px;
+
+            }
             footer {
         position: fixed; /* Фиксируем относительно окна браузера */
         bottom: 0; /* Прижимаем к низу */
@@ -81,14 +91,27 @@
     <body>
         <h1>Итальянский язык как третий иностранный</h1>
 
-        <div class="container">
+        <div class="panel">
+            <div class="panel-heading">Правила чтения</div>
+            <div class="panel-body">
+                <a href="pdf/правила чтения.pdf" download>Скачать PDF</a>
+            </div></div>
 
+        <div class="panel">
+            <div class="panel-heading">Lezione 1</div>
+            <div class="panel-body">
+                <a href="pdf/ВФК Lezione 1.pdf" download>Скачать PDF</a>
+            </div></div>
 
-
-        </div>
+        <div class="panel">
+            <div class="panel-heading">Lezione 2</div>
+            <div class="panel-body">
+                <a href="pdf/ВФК Lezione 2.pdf" download>Скачать PDF</a>
+            </div></div>
 
         
-        
+        <div class="navig-links"> 
+        <a href="index.html">Вернуться на главную страницу</a></div>
         
         <footer><p>(c) 2026 Струкова А.А. Практический курс третьего иностранного языка</p> </footer>
 
