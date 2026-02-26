@@ -27,7 +27,7 @@
                 font-family: Georgia, 'Times New Roman', Times, serif;
                 margin: 0;
                 padding-top: 80px; /* Отступ, равный или чуть больше высоты h1 */
-                padding-bottom: 60px; /* Отступ, чтобы контент не заходил за футер и ссылки */
+                padding-bottom: 100px; /* Отступ, чтобы контент не заходил за футер и ссылки */
                 box-sizing: border-box; /* Чтобы padding не увеличивал общую высоту */
             }
         
@@ -43,7 +43,12 @@
                 box-sizing: border-box;        
 
             }
-            
+            h2 {
+                width: 100%;
+                text-align: center;
+                color: rgb(27,75,99);
+
+            }
 
             .container {
                 text-align: center;
@@ -70,18 +75,25 @@
                 padding: 15px 30px;
                 text-align: center;
             }
+            
             .navig-links {
-                position: fixed;
-                bottom: 50px;
-                left: 40%;
-                text-align: center;
-                margin: 0;
-                text-decoration: none;
-                padding: 10px 0;
-                width: auto; /* Ширина по содержимому */
-                white-space: nowrap; /* Запрещаем перенос строк между ссылками */
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 50px;
+        left: 0;
+        right: 0; /* растягиваем на всю ширину */
+        
+        background-color: rgb(210,232,242, 0.5);
+        border-radius: 15px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+}
 
-            }
+        .navig-links a {
+         margin: 0 20px; /* добавляем отступы между ссылками */
+}
 
             footer {
             position: fixed; /* Фиксируем относительно окна браузера */
@@ -105,9 +117,10 @@
 
     <body>
         <h1>Итальянский язык как третий иностранный</h1>
+        
         <div id="top"></div>
         <div class="container">
-
+            <h2>Вводно-фонетический курс</h2>
             <div>
                 <table>
                 <th colspan="4">Правила чтения</th>

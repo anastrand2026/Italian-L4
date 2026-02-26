@@ -44,23 +44,31 @@
 
 
             .navig-links {
-                position: fixed;
-                bottom: 50px;
-                text-align: right;
-                margin: 0;
-                text-decoration: none;
-                padding: 10px 0;
-                width: auto; /* Ширина по содержимому */
-                white-space: nowrap; /* Запрещаем перенос строк между ссылками */
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 50px;
+        left: 0;
+        right: 0; /* растягиваем на всю ширину */
+        
+        background-color: rgb(210,232,242, 0.5);
+        border-radius: 15px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+}
 
-            }
+        .navig-links a {
+         margin: 0 20px; /* добавляем отступы между ссылками */
+}
+
         
             footer {
         position: fixed; /* Фиксируем относительно окна браузера */
         bottom: 0; /* Прижимаем к низу */
         left: 0; /* От левого края */
         width: 100%; /* На всю ширину */
-        text-align: center; 
+        text-align: center;
         color: white;
         padding: 1px 0;
         background-color: rgba(0,0,0,0.3);

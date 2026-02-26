@@ -15,6 +15,7 @@
 
             } 
             
+            
             body {
             user-select: none;
             background-image: url(translucent-image\ 25\ Rome\ \(1\).png) ;
@@ -22,40 +23,70 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                display: flex; /* Делаем body flex-контейнером для центрирования дочернего блока */
-                justify-content: center; /* Центрируем по горизонтали */
-                align-items: center;     /* Центрируем по вертикали */
+                display: flex; 
+                align-items: center;
                 font-family: Georgia, 'Times New Roman', Times, serif;
+                margin: 0;
+                padding-top: 80px; /* Отступ, равный или чуть больше высоты h1 */
+                padding-bottom: 60px; /* Отступ, чтобы контент не заходил за футер и ссылки */
+                box-sizing: border-box; /* Чтобы padding не увеличивал общую высоту */
+                display: flex;
+                flex-direction: row ; /* расположение */
+                align-items: center; /* Центрируем по горизонтали */
             }
         
             h1 {
-                position: fixed;
+                 position: fixed;
+                width: 100%;
+                text-align: center;
                 top: 0;
                 color: rgb(27,75,99);
-                font-style: oblique;        
+                font-style: oblique;
+                margin: 0;
+                padding: 15px 0;
+                box-sizing: border-box;         
 
             }
             
-
             .container {
                 text-align: center;
+                margin: 0 auto;
+                max-width: 100%;
+                display: flex;           /* Включаем flexbox */
+                flex-wrap: wrap;         /* Разрешаем перенос на новую строку */
+                justify-content: center; /* Центрируем по горизонтали */
+                gap: 20px;               /* Расстояние между панелями */
+                align-items: flex-start; /* Выравниваем по верхнему краю */
 
             }
-
-
-            .navig-links {
-                position: fixed;
-                bottom: 50px;
-                
+            h2 {
                 text-align: center;
-                margin: 0;
-                text-decoration: none;
-                padding: 10px 0;
-                width: auto; /* Ширина по содержимому */
-                white-space: nowrap; /* Запрещаем перенос строк между ссылками */
-
+                color: rgb(27,75,99);
+                margin-top: 0;
+                margin-bottom: 30px;
+                width: 100%;
             }
+
+            
+            .navig-links {
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 50px;
+        left: 0;
+        right: 0; /* растягиваем на всю ширину */
         
+        background-color: rgb(210,232,242, 0.5);
+        border-radius: 15px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+}
+
+        .navig-links a {
+         margin: 0 20px; /* добавляем отступы между ссылками */
+}
+
             .panel {
                 background-color: rgb(210,232,242);
                 color: rgb(27,75,99);
@@ -65,7 +96,8 @@
                 font-family: Georgia, 'Times New Roman', Times, serif;
                 font-size: 16pt;
                 font-style: italic;
-                margin: 50px;
+                margin: 25px;
+                
 
             }
             footer {
@@ -90,24 +122,30 @@
 
     <body>
         <h1>Итальянский язык как третий иностранный</h1>
+       
+            
+        <div class="container">
+        <h2>Вводно-фонетический курс</h2>
 
         <div class="panel">
             <div class="panel-heading">Правила чтения</div>
             <div class="panel-body">
-                <a href="pdf/правила чтения.pdf" download>Скачать PDF</a>
+                <a href="pdf/правила чтения.pdf" download target="_blank">Скачать PDF</a>
             </div></div>
 
         <div class="panel">
             <div class="panel-heading">Lezione 1</div>
             <div class="panel-body">
-                <a href="pdf/ВФК Lezione 1.pdf" download>Скачать PDF</a>
+                <a href="pdf/ВФК Lezione 1.pdf" download target="_blank">Скачать PDF</a>
             </div></div>
 
         <div class="panel">
             <div class="panel-heading">Lezione 2</div>
             <div class="panel-body">
-                <a href="pdf/ВФК Lezione 2.pdf" download>Скачать PDF</a>
+                <a href="pdf/ВФК Lezione 2.pdf" download target="_blank">Скачать PDF</a>
             </div></div>
+        </div>
+        
 
         
         <div class="navig-links"> 
