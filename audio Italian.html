@@ -2,16 +2,26 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
         <title>Аудио к пособию</title>
         <script src="js/third_lang_book.js"></script>
 
         <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
             html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%; 
                 width: 100%;
+                display: flex;
+                flex-direction: column;
 
             } 
             
@@ -22,48 +32,82 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                display: flex; 
-                align-items: center;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin: 0;
-                padding-top: 80px; /* Отступ, равный или чуть больше высоты h1 */
-                padding-bottom: 100px; /* Отступ, чтобы контент не заходил за футер и ссылки */
-                box-sizing: border-box; /* Чтобы padding не увеличивал общую высоту */
-            }
-        
-            h1 {
-                position: fixed;
-                width: 100%;
-                text-align: center;
-                top: 0;
-                color: rgb(27,75,99);
-                font-style: oblique;
-                margin: 0;
-                padding: 15px 0;
-                box-sizing: border-box;        
-
-            }
-             h2 {
-                text-align: center;
-                color: rgb(27,75,99);
-                background-color: rgb(210,232,242, 0.8);
-                width: 100%;
-                margin: 0 auto;
-                margin-bottom: 20px;
+                display: flex; /* Делаем body flex-контейнером для центрирования дочернего блока */
+                justify-content: center; /* Центрируем по горизонтали */
+                align-items: center;     /* Центрируем по вертикали */
+                font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
                 
             }
+        
+        
             .container {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+                 grid-template-rows: 
+            1fr        /* строка 1: main-menu */
+            1fr        /* строка 2: h2 */
+            1fr        /* строка 3: t1 */
+            1fr        /* строка 4: t2 */
+            1fr        /* строка 5: t3 */
+            auto       /* строка 6: navig-links */
+            min-content; /* строка 7: footer (занимает минимум места) */
+            flex-grow: 1;
+            min-height: 0;
+            height: 100%; /* Занимает всю высоту body */
+                }
+            
+            h2 {
                 text-align: center;
-                margin: 0 auto;
-                max-width: 100%;
-
+                color: rgb(27,75,99);
+                background-color: rgba(210,232,242, 0.8);
+                width: 100%;
+                margin: 0 0 20px 0;
+                font-size: clamp(1.2rem, 5vw, 1.8rem); /* адаптивный размер */
+                padding: 10px;
+                
+                
             }
 
+            #vfk-title {
+                grid-column: 2/5;
+                grid-row: 2;
+            }
+            .main-menu {
+                grid-column: -1/1;
+                grid-row: 1;
+                background-color: rgba(27,75,99, 0.8);
+                color: rgb(210,232,242);
+                width: 100%;             
+                text-align: center;
+                font-size: 20pt;
+                font-style: italic;
+                box-sizing: border-box;
+                padding: 15px;
+                
+          
+            }
+            .main-menu li {
+                display: inline;
+                padding: 15px;
+            }
+            .main-menu a {
+                color: rgb(213,223,230);
+                 text-decoration: none;
+            }    
+
+            .navig-links a {
+                color: rgb(27,75,99);
+
+            }
+            a:hover {
+    color: white;
+    text-decoration: underline;
+}
 
             table {
-                background-color: rgb(210,232,242);
+                background-color: rgba(210,232,242,0.8);
                 color: rgb(27,75,99);
-                padding: 15px 30px;
+                padding: 15px 15px;
                 text-align: center;
                 border-radius: 15px;
                 flex-shrink: 0; /* Запрещаем таблице сжиматься */
@@ -71,43 +115,56 @@
                 width: 100%;
             }
             
-            
-            tr, td {
-                color: rgb(27,75,99);
-                padding: 15px 30px;
-                text-align: center;
+            #t1 {
+                grid-column: 2 / 5;  
+  grid-row: 3;
+                margin-bottom: 20px;
+
             }
             
-            .navig-links {
-            display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 50px;
-        left: 0;
-        right: 0; /* растягиваем на всю ширину */
-        
-        background-color: rgb(210,232,242, 0.5);
-        border-radius: 15px;
-        padding: 10px 20px;
-        margin-bottom: 30px;
-}
+            #t2 {
+               grid-column-start: 3;
+                grid-column-end: 5;
+                grid-row:4;
+                margin-bottom:20px;
 
-        .navig-links a {
+            }
+            
+            #t3 {grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row:5;
+                margin-bottom:20px;
+
+            }
+            .navig-links {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row: 6;
+            background-color: rgba(210,232,242, 0.5);
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-top: 150px;
+            }
+
+            .navig-links a {
          margin: 0 20px; /* добавляем отступы между ссылками */
 }
 
             footer {
-            position: fixed; /* Фиксируем относительно окна браузера */
-            bottom: 0; /* Прижимаем к низу */
-            left: 0; /* От левого края */
-            width: 100%; /* На всю ширину */
-            text-align: right; 
-            color: white;
-            padding: 1px 0;
-            background-color: rgba(0,0,0,0.3);
-            margin: 0;
-            font-size: 14pt;
+        grid-column: 1/ -1;
+        grid-row: 7;
+                height: 50px;
+        width: 100%; /* На всю ширину */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right; 
+        color: white;        
+        background-color: rgba(0,0,0,0.3);
+        margin: 0;
+        font-size: 14pt;
+        
         
         }
         
@@ -118,68 +175,96 @@
     </head>
 
     <body>
-        <h1>Итальянский язык как третий иностранный</h1>
+         
+         <div class="container">
+            <div id="top"></div>
+            <nav class="main-menu">
+<ul>
+<li><a href="#vfk-title" class="active">ВФК</a></li>
+<li><a href="">Unità 1</a></li>
+<li><a href="">Unità 2</a></li>
+<li><a href="">Unità 3</a></li>
+<li><a href="">Unità 4</a></li>
+<li><a href="">Unità 5</a></li>
+<li><a href="">Unità 6</a></li>
+<li><a href="">Unità 7</a></li>
+<li><a href="">Unità 8</a></li>
+</ul>
+</nav>
         
-        <div id="top"></div>
-        <div class="container">
-            <h2>Вводно-фонетический курс</h2>
-            <div>
-                <table>
+        
+        
+            <h2 id="vfk-title">Вводно-фонетический курс</h2>
+            <table id="t1">
                 <th colspan="4">Правила чтения</th>
-                    <tr><td>Упражнение 1</td>
+                    
+                <tr> <td>Упражнение 1 (Марта)</td>
                 <td><audio src="audio/Упражнение1.mp3" controls></audio></td>
-                <td>Упражнение 2</td>
+                <td> Упражнение 2 (Марта)</td>
                 <td><audio src="audio/Упражнение2.mp3" controls></audio></td>
             </tr>
-
-                            
-            <tr><td>Упражнение 3</td>
+            <tr> <td>Упражнение 3 (Марта)</td>
                 <td><audio src="audio/Упражнение3.mp3" controls></audio></td>
-                <td>Упражнение 4</td>
+                <td>Упражнение 4 (Марта)</td>
                 <td><audio src="audio/Упражнение4.mp3" controls></audio></td>
-            </tr>
-
-            <tr> <td>Упражнение 5a</td>
+            </tr>       
+            
+            <tr> <td>Упражнение 5a (Марта)</td>
                 <td><audio src="audio/Упражнение5а.mp3" controls></audio></td>
-                <td>Упражнение 5b</td>
+                <td>Упражнение 5b (Марта)</td>
                 <td><audio src="audio/Упражнение5b с паузами.mp3" controls></audio></td>
             </tr>
+             <tr> <td>Упражнение 6 (Патриция)</td>
+                <td><audio src="audio/intro-prima-lezione-1.mp3" controls></audio></td>
+                <td>Упражнение 7 (Патриция)</td>
+                <td><audio src="audio/intro-prima-lezione-2.mp3" controls></audio></td>
+            </tr>
             </table>
-            </div>
+            
 
-            <div>
-                <table>
+            <table id="t2">
                     <th colspan="4">Lezione 1 / Урок 1</th>
-                    <tr> <td>Упражнение в чтении</td>
+                    <tr> <td>Упражнение в чтении (Марта)</td>
                 <td><audio src="audio/У1.mp3" controls></audio></td>
-                <td>Текст</td>
+                <td>Текст (Марта)</td>
                 <td><audio src="audio/Текст1.mp3" controls></audio></td>
             </tr>
-                </table>
-            </div>
-
-            <div>
-                <table>
-                    <th colspan="4">Lezione 2 / Урок 2</th>
-                    <tr> <td>Упражнение в чтении</td>
-                <td><audio src="audio/esercizio lettura.mp3" controls></audio></td>
-                <td>Текст</td>
-                <td><audio src="audio/Monologo.mp3" controls></audio></td>
+            <tr> <td>Упражнение в чтении (Давиде)</td>
+                <td><audio src="audio/упр в чтении L1.mp3" controls></audio></td>
+                <td>Текст (Давиде)</td>
+                <td><audio src="audio/текст L1.mp3" controls></audio></td>
             </tr>
                 </table>
-            </div>
+           
 
+            <table id="t3">
+                    <th colspan="4">Lezione 2 / Урок 2</th>
+                    <tr> <td>Упражнение в чтении (Марта)</td>
+                <td><audio src="audio/esercizio lettura.mp3" controls></audio></td>
+                <td>Упражнение в чтении (Патриция)</td>
+                <td><audio src="audio/lezione2-parole-Patrizia.mp3" controls></audio></td>
+            </tr>
+            <tr> <td>Текст (Марта)</td>
+                <td><audio src="audio/Monologo.mp3" controls></audio></td>
+                <td>Текст (Патриция)</td>
+                <td><audio src="audio/lezione2-testo-Patrizia.mp3" controls></audio></td>
+            </tr>
+                </table>
+            
 
-        </div>
+                
+        
 
         <div class="navig-links"> <a href="#top">Вернуться к началу</a>
         <a href="index.html">Вернуться на главную страницу</a></div>
         
-        
-        
         <footer><p>(c) 2026 Струкова А.А. Практический курс третьего иностранного языка</p> </footer>
+        </div>
+        
 
+        
+       
 
-
+       
 
     </body>

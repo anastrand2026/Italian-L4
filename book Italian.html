@@ -25,7 +25,7 @@
                 background-attachment: fixed;
                 display: flex; 
                 align-items: center;
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
                 margin: 0;
                 padding-top: 80px; /* Отступ, равный или чуть больше высоты h1 */
                 padding-bottom: 60px; /* Отступ, чтобы контент не заходил за футер и ссылки */
@@ -62,9 +62,11 @@
             h2 {
                 text-align: center;
                 color: rgb(27,75,99);
-                background-color: rgb(210,232,242, 0.8);
+                background-color: rgba(210,232,242, 0.8);
                 width: 100%;
-                margin: 0 auto;
+                margin: 0 0 20px 0;
+                font-size: clamp(1.2rem, 5vw, 1.8rem); /* адаптивный размер */
+                
                 
             }
 

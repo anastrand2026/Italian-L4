@@ -25,7 +25,7 @@
                 display: flex; /* Делаем body flex-контейнером для центрирования дочернего блока */
                 justify-content: center; /* Центрируем по горизонтали */
                 align-items: center;     /* Центрируем по вертикали */
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
             }
         
             h1 {
@@ -44,9 +44,15 @@
 
             .container {
                 text-align: center;
+                margin: 0 auto;
+                max-width: 100%;
+                display: flex;           /* Включаем flexbox */
+                flex-wrap: wrap;         /* Разрешаем перенос на новую строку */
+                justify-content: center; /* Центрируем по горизонтали */
+                gap: 20px;               /* Расстояние между панелями */
+                align-items: flex-start; /* Выравниваем по верхнему краю */
 
             }
-
 
             .navig-links {
             display: flex;
@@ -58,7 +64,7 @@
         right: 0; /* растягиваем на всю ширину */
         
         background-color: rgb(210,232,242, 0.5);
-        border-radius: 15px;
+        
         padding: 10px 20px;
         margin-bottom: 30px;
 }
@@ -67,7 +73,20 @@
          margin: 0 20px; /* добавляем отступы между ссылками */
 }
 
-        
+        .panel {
+                background-color: rgb(210,232,242);
+                color: rgb(27,75,99);
+                padding: 15px 30px;
+                text-align: center;
+                border-radius: 15px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 16pt;
+                font-style: italic;
+                margin: 25px;
+                
+                
+            }
+
             footer {
         position: fixed; /* Фиксируем относительно окна браузера */
         bottom: 0; /* Прижимаем к низу */
@@ -89,10 +108,15 @@
     </head>
 
     <body>
-        <h1>Итальянский язык как третий иностранный</h1>
-
+        
         <div class="container">
-
+            <div class="panel">
+            <div class="panel-heading">Род существительных</div>
+            <div class="panel-body">
+                <button class="excercise-btn" id="exBtn">Упражнение 1</button></div>
+            </div>
+        
+            
 
 
         </div>
